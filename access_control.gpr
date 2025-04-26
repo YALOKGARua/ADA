@@ -1,6 +1,150 @@
 project Access_Control is
    for Source_Dirs use (".");
    for Object_Dir use "obj";
-   for Exec_Dir use ".";
+   for Exec_Dir use "bin";
+   for Main use ("main.adb", "access_control.adb");
+   for Languages use ("Ada");
+   package Compiler is
+      for Default_Switches ("Ada") use ("-gnat2022", "-O2", "-gnatwa");
+   end Compiler;
+   package Binder is
+      for Default_Switches ("Ada") use ("-E");
+   end Binder;
+   package Linker is
+      for Default_Switches ("Ada") use ("-static");
+   end Linker;
+   for Library_Dir use "lib";
+   for Library_Kind use "static";
+   for Library_Name use "Access_Control_Lib";
+   package Ide is
+      for Gnatlist use "gnatls";
+      for Gpr_File use "access_control.gpr";
+   end Ide;
+   for Create_Missing_Dirs use "True";
+   for Source_Files use ("main.adb", "security.adb", "access_control.adb");
+   package Builder is
+      for Default_Switches ("Ada") use ("-j4");
+   end Builder;
+   package Check is
+      for Default_Switches ("Ada") use ("-gnatc");
+   end Check;
+   package Clean is
+      for Switches use ("-r");
+   end Clean;
+   package Install is
+      for Artifacts ("Ada") use ("bin/*");
+   end Install;
+   package Naming is
+      for Specification_Suffix ("Ada") use ".ads";
+      for Implementation_Suffix ("Ada") use ".adb";
+   end Naming;
+   package Pretty_Printer is
+      for Default_Switches ("Ada") use ("-M");
+   end Pretty_Printer;
+   package Gnatstub is
+      for Default_Switches ("Ada") use ("-q");
+   end Gnatstub;
+   package Documentation is
+      for Default_Switches ("Ada") use ("-gnatyd");
+   end Documentation;
+   package Metrics is
+      for Default_Switches ("Ada") use ("-gnatm");
+   end Metrics;
+   package Eliminate is
+      for Default_Switches ("Ada") use ("-q");
+   end Eliminate;
+   package Stack is
+      for Default_Switches ("Ada") use ("-q");
+   end Stack;
+   package Cross_Reference is
+      for Default_Switches ("Ada") use ("-x");
+   end Cross_Reference;
+   package Find is
+      for Default_Switches ("Ada") use ("-f");
+   end Find;
+   package Lib is
+      for Default_Switches ("Ada") use ("-q");
+   end Lib;
+   package List is
+      for Default_Switches ("Ada") use ("-q");
+   end List;
+   package Make is
+      for Default_Switches ("Ada") use ("-q");
+   end Make;
+   package Path is
+      for Default_Switches ("Ada") use ("-q");
+   end Path;
+   package Prep is
+      for Default_Switches ("Ada") use ("-q");
+   end Prep;
+   package Remote is
+      for Default_Switches ("Ada") use ("-q");
+   end Remote;
+   package Synchronize is
+      for Default_Switches ("Ada") use ("-q");
+   end Synchronize;
+   package Test is
+      for Default_Switches ("Ada") use ("-q");
+   end Test;
+   package Xref is
+      for Default_Switches ("Ada") use ("-q");
+   end Xref;
+   for Source_Dirs use (".");
+   for Object_Dir use "obj";
+   for Exec_Dir use "bin";
    for Main use ("main.adb");
+   package Compiler is
+      for Default_Switches ("Ada") use ("-gnat2022", "-O2");
+   end Compiler;
+   package Binder is
+      for Default_Switches ("Ada") use ("-E");
+   end Binder;
+   package Linker is
+      for Default_Switches ("Ada") use ("-static");
+   end Linker;
+   for Library_Dir use "lib";
+   for Library_Kind use "static";
+   for Library_Name use "Access_Control_Lib";
+   package Ide is
+      for Gnatlist use "gnatls";
+   end Ide;
+   for Create_Missing_Dirs use "True";
+   for Source_Files use ("main.adb", "security.adb", "access_control.adb");
+   package Builder is
+      for Default_Switches ("Ada") use ("-j4");
+   end Builder;
+   package Check is
+      for Default_Switches ("Ada") use ("-gnatc");
+   end Check;
+   package Clean is
+      for Switches use ("-r");
+   end Clean;
+   package Install is
+      for Artifacts ("Ada") use ("bin/*");
+   end Install;
+   package Naming is
+      for Specification_Suffix ("Ada") use ".ads";
+      for Implementation_Suffix ("Ada") use ".adb";
+   end Naming;
+   package Pretty_Printer is
+      for Default_Switches ("Ada") use ("-M");
+   end Pretty_Printer;
+   package Gnatstub is
+      for Default_Switches ("Ada") use ("-q");
+   end Gnatstub;
+   package Documentation is
+      for Default_Switches ("Ada") use ("-gnatyd");
+   end Documentation;
+   package Metrics is
+      for Default_Switches ("Ada") use ("-gnatm");
+   end Metrics;
+   package Eliminate is
+      for Default_Switches ("Ada") use ("-q");
+   end Eliminate;
+   package Stack is
+      for Default_Switches ("Ada") use ("-q");
+   end Stack;
+   package Cross_Reference is
+      for Default_Switches ("Ada") use ("-x");
+   end Cross_Reference;
 end Access_Control;

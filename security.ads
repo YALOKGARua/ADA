@@ -1,19 +1,83 @@
 package Security is
 
    type Access_Status is (Locked, Unlocked);
+   type User_Role is (Guest, User, Admin);
+   type Session_State is (Active, Expired, Invalid);
 
-   procedure Check_Password (Success : out Boolean);
-
+   procedure Check_Password (Success : out Boolean; Role : out User_Role);
    procedure Increment_Attempts;
-
    function Get_Attempts return Natural;
-
    procedure Set_Status (New_Status : Access_Status);
-
    function Get_Status return Access_Status;
-
    procedure Reset;
+   procedure Log_Access_Attempt (Username : String; Success : Boolean);
+   function Is_Session_Valid return Boolean;
+   procedure Start_Session;
+   procedure End_Session;
+   function Get_Session_State return Session_State;
+   procedure Set_Role (New_Role : User_Role);
+   function Get_Role return User_Role;
+   procedure Validate_Password_Strength (Password : String; Valid : out Boolean);
+   procedure Lock_System;
+   function Is_System_Locked return Boolean;
+   procedure Update_Login_Timestamp;
+   function Get_Last_Login return String;
+   procedure Generate_Session_Token;
+   function Get_Session_Token return String;
+   procedure Invalidate_Session_Token;
+   procedure Check_Session_Timeout;
+   procedure Extend_Session;
+   procedure Log_System_Event (Event : String);
+   function Get_Event_Log_Count return Natural;
+   procedure Clear_Event_Log;
+   procedure Set_Username (Name : String);
+   function Get_Username return String;
+   procedure Initialize_System;
+   procedure Shutdown_System;
+   procedure Set_Max_Attempts (Max : Natural);
+   function Get_Max_Attempts return Natural;
+   procedure Increment_Successful_Logins;
+   function Get_Successful_Logins return Natural;
+   procedure Increment_Failed_Logins;
+   function Get_Failed_Logins return Natural;
+   procedure Reset_Login_Stats;
+   procedure Set_Session_Duration (Seconds : Natural);
+   function Get_Session_Duration return Natural;
+   procedure Check_Role_Permissions (Action : String; Allowed : out Boolean);
+   procedure Add_Audit_Entry (Audit_Entry : String);
+   function Get_Audit_Entries return Natural;
+   procedure Clear_Audit_Log;
+   procedure Set_Lockout_Duration (Seconds : Natural);
+   function Get_Lockout_Duration return Natural;
+   procedure Trigger_Lockout;
+   function Is_Lockout_Active return Boolean;
+   procedure Clear_Lockout;
+   procedure Set_Password_Complexity (Min_Length : Natural; Require_Special : Boolean);
+   function Get_Password_Min_Length return Natural;
+   function Get_Password_Requires_Special return Boolean;
+   procedure Rotate_Session_Token;
+   procedure Log_Session_Event (Event : String);
+   function Get_Session_Event_Count return Natural;
+   procedure Clear_Session_Log;
+   procedure Set_Login_Threshold (Threshold : Natural);
+   function Get_Login_Threshold return Natural;
+   procedure Check_Login_Threshold;
+   procedure Reset_Threshold;
+   procedure Set_System_Mode (Mode : String);
+   function Get_System_Mode return String;
+   procedure Enable_Two_Factor;
+   function Is_Two_Factor_Enabled return Boolean;
+   procedure Verify_Two_Factor_Code (Code : String; Valid : out Boolean);
+   procedure Generate_Two_Factor_Code;
+   function Get_Two_Factor_Code return String;
+   procedure Expire_Two_Factor_Code;
+   procedure Set_Security_Level (Level : Natural);
+   function Get_Security_Level return Natural;
 
 private
    Max_Attempts : constant Natural := 3;
+   Default_Session_Duration : constant Natural := 300;
+   Default_Lockout_Duration : constant Natural := 600;
+   Default_Login_Threshold : constant Natural := 5;
+   Default_Security_Level : constant Natural := 1;
 end Security;

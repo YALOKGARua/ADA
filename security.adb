@@ -82,7 +82,7 @@ package body Security is
       Session_Active := False;
    end Reset;
 
-   procedure Log_Access_Attempt (Username : String; Success : Boolean) is
+   procedure Log_Access_Attempt is
    begin
       Audit_Entries := Audit_Entries + 1;
    end Log_Access_Attempt;
@@ -177,7 +177,7 @@ package body Security is
       Last_Login_Time := Clock;
    end Extend_Session;
 
-   procedure Log_System_Event (Event : String) is
+   procedure Log_System_Event is
    begin
       Event_Log_Count := Event_Log_Count + 1;
    end Log_System_Event;
@@ -262,12 +262,12 @@ package body Security is
       return Session_Duration;
    end Get_Session_Duration;
 
-   procedure Check_Role_Permissions (Action : String; Allowed : out Boolean) is
+   procedure Check_Role_Permissions (Allowed : out Boolean) is
    begin
       Allowed := Current_Role = Admin;
    end Check_Role_Permissions;
 
-   procedure Add_Audit_Entry (Audit_Entry : String) is
+   procedure Add_Audit_Entry is
    begin
       Audit_Entries := Audit_Entries + 1;
    end Add_Audit_Entry;
@@ -328,7 +328,7 @@ package body Security is
       Generate_Session_Token;
    end Rotate_Session_Token;
 
-   procedure Log_Session_Event (Event : String) is
+   procedure Log_Session_Event is
    begin
       Session_Log_Count := Session_Log_Count + 1;
    end Log_Session_Event;

@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\ADA\security.adb:85:34: warning: formal parameter "Username" is not referenced [-gnatwu]
+C:\Users\User\Desktop\ADA\security.adb:85:53: warning: formal parameter "Success" is not referenced [-gnatwu]
+C:\Users\User\Desktop\ADA\security.adb:180:32: warning: formal parameter "Event" is not referenced [-gnatwu]
+C:\Users\User\Desktop\ADA\security.adb:265:38: warning: formal parameter "Action" is not referenced [-gnatwu]
+C:\Users\User\Desktop\ADA\security.adb:270:31: warning: formal parameter "Audit_Entry" is not referenced [-gnatwu]
+C:\Users\User\Desktop\ADA\security.adb:331:33: warning: formal parameter "Event" is not referenced [-gnatwu]

@@ -1,0 +1,2 @@
+C:\Users\User\Desktop\ADA\main.adb:94:19: error: too many arguments in call to "Log_Access_Attempt"
+C:\Users\User\Desktop\ADA\main.adb:99:19: error: too many arguments in call to "Log_Access_Attempt"

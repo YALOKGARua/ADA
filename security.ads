@@ -10,7 +10,7 @@ package Security is
    procedure Set_Status (New_Status : Access_Status);
    function Get_Status return Access_Status;
    procedure Reset;
-   procedure Log_Access_Attempt (Username : String; Success : Boolean);
+   procedure Log_Access_Attempt;
    function Is_Session_Valid return Boolean;
    procedure Start_Session;
    procedure End_Session;
@@ -27,7 +27,7 @@ package Security is
    procedure Invalidate_Session_Token;
    procedure Check_Session_Timeout;
    procedure Extend_Session;
-   procedure Log_System_Event (Event : String);
+   procedure Log_System_Event;
    function Get_Event_Log_Count return Natural;
    procedure Clear_Event_Log;
    procedure Set_Username (Name : String);
@@ -43,8 +43,8 @@ package Security is
    procedure Reset_Login_Stats;
    procedure Set_Session_Duration (Seconds : Natural);
    function Get_Session_Duration return Natural;
-   procedure Check_Role_Permissions (Action : String; Allowed : out Boolean);
-   procedure Add_Audit_Entry (Audit_Entry : String);
+   procedure Check_Role_Permissions (Allowed : out Boolean);
+   procedure Add_Audit_Entry;
    function Get_Audit_Entries return Natural;
    procedure Clear_Audit_Log;
    procedure Set_Lockout_Duration (Seconds : Natural);
@@ -56,7 +56,7 @@ package Security is
    function Get_Password_Min_Length return Natural;
    function Get_Password_Requires_Special return Boolean;
    procedure Rotate_Session_Token;
-   procedure Log_Session_Event (Event : String);
+   procedure Log_Session_Event;
    function Get_Session_Event_Count return Natural;
    procedure Clear_Session_Log;
    procedure Set_Login_Threshold (Threshold : Natural);

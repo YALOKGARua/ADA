@@ -1,0 +1,322 @@
+V "GNAT Lib v2021"
+A -O2
+A -gnatA
+A -gnat2022
+A -gnatwa
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FIXED_POINT
+RV NO_IO
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U security%b		security.adb		c584207f OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z system.img_int%s	s-imgint.ads		s-imgint.ali
+Z system.img_lli%s	s-imglli.ads		s-imglli.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+U security%s		security.ads		3caca475 EE NE OO PK
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-calend.ads		20210520051128 474d9720 ada.calendar%s
+D a-charac.ads		20210520051128 2d3ec45b ada.characters%s
+D a-chlat1.ads		20210520051128 66457d31 ada.characters.latin_1%s
+D a-except.ads		20210520051128 946f3014 ada.exceptions%s
+D a-finali.ads		20210520051128 bf4f806b ada.finalization%s
+D a-ioexce.ads		20210520051128 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20210520051130 119b8fb3 ada.streams%s
+D a-string.ads		20210520051130 90ac6797 ada.strings%s
+D a-strmap.ads		20210520051130 5a88892a ada.strings.maps%s
+D a-sttebu.ads		20210520051130 18209c64 ada.strings.text_buffers%s
+D a-strunb.ads		20210520051130 03325227 ada.strings.unbounded%s
+D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
+D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20210520051132 edec285f interfaces%s
+D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
+D security.ads		20250426140442 3caca475 security%s
+D security.adb		20250426140652 13a39460 security%b
+D system.ads		20210520051136 2ffa5114 system%s
+D s-atocou.ads		20210520051132 b45c2d8d system.atomic_counters%s
+D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051132 078245e4 system.file_control_block%s
+D s-finroo.ads		20210520051132 4ff27390 system.finalization_root%s
+D s-imagei.ads		20210520051134 0d3f86a7 system.image_i%s
+D s-imgint.ads		20210520051134 bdb6f5ec system.img_int%s
+D s-imglli.ads		20210520051134 3723d9ff system.img_lli%s
+D s-memory.ads		20210520051134 597d6634 system.memory%s
+D s-parame.ads		20210520051134 4752c4cb system.parameters%s
+D s-putima.ads		20210520051134 4e095881 system.put_images%s
+D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20210520051134 a7318a92 system.soft_links%s
+D s-stache.ads		20210520051134 a37c21ec system.stack_checking%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+D s-stalib.adb		20210520051134 977290bf system.standard_library%b
+D s-stoele.ads		20210520051134 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
+D s-stratt.ads		20210520051134 7bdda3fa system.stream_attributes%s
+D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
+D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
+D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
+G a e
+G c Z s b [check_password security 7 14 none]
+G c Z s b [increment_attempts security 8 14 none]
+G c Z s b [get_attempts security 9 13 none]
+G c Z s b [set_status security 10 14 none]
+G c Z s b [get_status security 11 13 none]
+G c Z s b [reset security 12 14 none]
+G c Z s b [log_access_attempt security 13 14 none]
+G c Z s b [is_session_valid security 14 13 none]
+G c Z s b [start_session security 15 14 none]
+G c Z s b [end_session security 16 14 none]
+G c Z s b [get_session_state security 17 13 none]
+G c Z s b [set_role security 18 14 none]
+G c Z s b [get_role security 19 13 none]
+G c Z s b [validate_password_strength security 20 14 none]
+G c Z s b [lock_system security 21 14 none]
+G c Z s b [is_system_locked security 22 13 none]
+G c Z s b [update_login_timestamp security 23 14 none]
+G c Z s b [get_last_login security 24 13 none]
+G c Z s b [generate_session_token security 25 14 none]
+G c Z s b [get_session_token security 26 13 none]
+G c Z s b [invalidate_session_token security 27 14 none]
+G c Z s b [check_session_timeout security 28 14 none]
+G c Z s b [extend_session security 29 14 none]
+G c Z s b [log_system_event security 30 14 none]
+G c Z s b [get_event_log_count security 31 13 none]
+G c Z s b [clear_event_log security 32 14 none]
+G c Z s b [set_username security 33 14 none]
+G c Z s b [get_username security 34 13 none]
+G c Z s b [initialize_system security 35 14 none]
+G c Z s b [shutdown_system security 36 14 none]
+G c Z s b [set_max_attempts security 37 14 none]
+G c Z s b [get_max_attempts security 38 13 none]
+G c Z s b [increment_successful_logins security 39 14 none]
+G c Z s b [get_successful_logins security 40 13 none]
+G c Z s b [increment_failed_logins security 41 14 none]
+G c Z s b [get_failed_logins security 42 13 none]
+G c Z s b [reset_login_stats security 43 14 none]
+G c Z s b [set_session_duration security 44 14 none]
+G c Z s b [get_session_duration security 45 13 none]
+G c Z s b [check_role_permissions security 46 14 none]
+G c Z s b [add_audit_entry security 47 14 none]
+G c Z s b [get_audit_entries security 48 13 none]
+G c Z s b [clear_audit_log security 49 14 none]
+G c Z s b [set_lockout_duration security 50 14 none]
+G c Z s b [get_lockout_duration security 51 13 none]
+G c Z s b [trigger_lockout security 52 14 none]
+G c Z s b [is_lockout_active security 53 13 none]
+G c Z s b [clear_lockout security 54 14 none]
+G c Z s b [set_password_complexity security 55 14 none]
+G c Z s b [get_password_min_length security 56 13 none]
+G c Z s b [get_password_requires_special security 57 13 none]
+G c Z s b [rotate_session_token security 58 14 none]
+G c Z s b [log_session_event security 59 14 none]
+G c Z s b [get_session_event_count security 60 13 none]
+G c Z s b [clear_session_log security 61 14 none]
+G c Z s b [set_login_threshold security 62 14 none]
+G c Z s b [get_login_threshold security 63 13 none]
+G c Z s b [check_login_threshold security 64 14 none]
+G c Z s b [reset_threshold security 65 14 none]
+G c Z s b [set_system_mode security 66 14 none]
+G c Z s b [get_system_mode security 67 13 none]
+G c Z s b [enable_two_factor security 68 14 none]
+G c Z s b [is_two_factor_enabled security 69 13 none]
+G c Z s b [verify_two_factor_code security 70 14 none]
+G c Z s b [generate_two_factor_code security 71 14 none]
+G c Z s b [get_two_factor_code security 72 13 none]
+G c Z s b [expire_two_factor_code security 73 14 none]
+G c Z s b [set_security_level security 74 14 none]
+G c Z s b [get_security_level security 75 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 20|1r6 1r23 2r6 2r33 3r6 3r24
+X 2 a-calend.ads
+36K13*Calendar 413e17 20|3w10 3r28
+42I9*Time<226I9> 20|13r22 150r14
+56V13*Clock{42I9} 20|13s30 92s39 99s26 145s26 170s11 177s26
+112V14*"-"{duration} 20|92s45 170s17
+226I9 Time_Rep<long_long_integer>
+X 9 a-string.ads
+16K13*Strings 35e16 20|2r10 2r37
+X 12 a-strunb.ads
+83K21*Unbounded 765e26 20|2w18 2r45
+88R9*Unbounded_String<6|43R9> 744e15 20|12r20 23r15 26r22 31r20
+104V13*To_Unbounded_String{88R9} 20|12s40 23s35 26s42 37s21 155s24 165s24
+. 197s19 395s26 405s26
+117V13*To_String{string} 20|38s10 160s14 202s14 390s23 400s14
+X 15 a-textio.ads
+58K13*Text_IO 725e16 20|1w10 1r27
+479U14*Get_Line 20|36s7
+506U14*Put_Line 20|35s7 50s13
+X 19 security.ads
+1K9*Security 78E4 83l5 83e13 20|5b14 418l5 418t13
+3E9*Access_Status 3e44 10r39 11r31 20|9r21 67r39 72r31
+3n27*Locked{3E9} 20|9r38 80r25 135r25 140r31 208r25
+3n35*Unlocked{3E9} 20|41r21
+4E9*User_Role 4e42 7r64 18r35 19r29 20|10r19 30r64 117r35 122r29
+4n23*Guest{4E9} 20|10r32 46r18 81r23
+4n30*User{4E9}
+4n36*Admin{4E9} 20|40r18 267r33
+5E9*Session_State 5e52 17r38 20|108r38
+5n27*Active{5E9} 20|111r17
+5n35*Expired{5E9} 20|113r17
+5n44*Invalid{5E9}
+7U14*Check_Password 7<30 7<53 20|30b14 55l8 55t22
+7b30 Success{boolean} 20|30b30 39m10 45m10
+7e53 Role{4E9} 20|30b53 40m10 42r19 46m10
+8U14*Increment_Attempts 20|47s10 57b14 60l8 60t26
+9V13*Get_Attempts{natural} 20|62b13 65l8 65t20
+10U14*Set_Status 10>26 20|41s10 67b14 70l8 70t18
+10e26 New_Status{3E9} 20|67b26 69r25
+11V13*Get_Status{3E9} 20|72b13 75l8 75t18
+12U14*Reset 20|77b14 83l8 83t13 214s7
+13U14*Log_Access_Attempt 13>34 13>53 20|85b14 88l8 88t26
+13a34 Username{string} 20|85b34
+13b53 Success{boolean} 20|85b53
+14V13*Is_Session_Valid{boolean} 20|90b13 93l8 93t24
+15U14*Start_Session 20|95b14 100l8 100t21
+16U14*End_Session 20|102b14 106l8 106t19 171s10
+17V13*Get_Session_State{5E9} 20|108b13 115l8 115t25
+18U14*Set_Role 18>24 20|42s10 117b14 120l8 120t16
+18e24 New_Role{4E9} 20|117b24 119r23
+19V13*Get_Role{4E9} 20|122b13 125l8 125t16
+20U14*Validate_Password_Strength 20>42 20<61 20|127b14 131l8 131t34
+20a42 Password{string} 20|127b42 129r16 130r55
+20b61 Valid{boolean} 20|127b61 129m7
+21U14*Lock_System 20|133b14 136l8 136t19
+22V13*Is_System_Locked{boolean} 20|138b13 141l8 141t24
+23U14*Update_Login_Timestamp 20|143b14 146l8 146t30
+24V13*Get_Last_Login{string} 20|148b13 151l8 151t22
+25U14*Generate_Session_Token 20|98s7 153b14 156l8 156t30 328s7
+26V13*Get_Session_Token{string} 20|158b13 161l8 161t25
+27U14*Invalidate_Session_Token 20|105s7 163b14 166l8 166t32
+28U14*Check_Session_Timeout 20|168b14 173l8 173t29
+29U14*Extend_Session 20|175b14 178l8 178t22
+30U14*Log_System_Event 30>32 20|180b14 183l8 183t24
+30a32 Event{string} 20|180b32
+31V13*Get_Event_Log_Count{natural} 20|185b13 188l8 188t27
+32U14*Clear_Event_Log 20|190b14 193l8 193t23 215s7
+33U14*Set_Username 33>28 20|195b14 198l8 198t20
+33a28 Name{string} 20|195b28 197r39
+34V13*Get_Username{string} 20|200b13 203l8 203t20
+35U14*Initialize_System 20|205b14 210l8 210t25
+36U14*Shutdown_System 20|212b14 217l8 217t23
+37U14*Set_Max_Attempts 37>32 20|219b14 222l8 222t24
+37i32 Max{natural} 20|219b32
+38V13*Get_Max_Attempts{natural} 20|224b13 227l8 227t24
+39U14*Increment_Successful_Logins 20|43s10 229b14 232l8 232t35
+40V13*Get_Successful_Logins{natural} 20|234b13 237l8 237t29
+41U14*Increment_Failed_Logins 20|48s10 239b14 242l8 242t31
+42V13*Get_Failed_Logins{natural} 20|244b13 247l8 247t25
+43U14*Reset_Login_Stats 20|249b14 253l8 253t25
+44U14*Set_Session_Duration 44>36 20|255b14 258l8 258t28
+44i36 Seconds{natural} 20|255b36 257r27
+45V13*Get_Session_Duration{natural} 20|260b13 263l8 263t28
+46U14*Check_Role_Permissions 46>38 46<55 20|265b14 268l8 268t30
+46a38 Action{string} 20|265b38
+46b55 Allowed{boolean} 20|265b55 267m7
+47U14*Add_Audit_Entry 47>31 20|270b14 273l8 273t23
+47a31 Audit_Entry{string} 20|270b31
+48V13*Get_Audit_Entries{natural} 20|275b13 278l8 278t25
+49U14*Clear_Audit_Log 20|216s7 280b14 283l8 283t23
+50U14*Set_Lockout_Duration 50>36 20|285b14 288l8 288t28
+50i36 Seconds{natural} 20|285b36 287r27
+51V13*Get_Lockout_Duration{natural} 20|290b13 293l8 293t28
+52U14*Trigger_Lockout 20|51s13 295b14 298l8 298t23 359s10
+53V13*Is_Lockout_Active{boolean} 20|300b13 303l8 303t25
+54U14*Clear_Lockout 20|305b14 308l8 308t21
+55U14*Set_Password_Complexity 55>39 55>61 20|310b14 314l8 314t31
+55i39 Min_Length{natural} 20|310b39 312r30
+55b61 Require_Special{boolean} 20|310b61 313r36
+56V13*Get_Password_Min_Length{natural} 20|316b13 319l8 319t31
+57V13*Get_Password_Requires_Special{boolean} 20|321b13 324l8 324t37
+58U14*Rotate_Session_Token 20|326b14 329l8 329t28
+59U14*Log_Session_Event 59>33 20|331b14 334l8 334t25
+59a33 Event{string} 20|331b33
+60V13*Get_Session_Event_Count{natural} 20|336b13 339l8 339t31
+61U14*Clear_Session_Log 20|341b14 344l8 344t25
+62U14*Set_Login_Threshold 62>35 20|346b14 349l8 349t27
+62i35 Threshold{natural} 20|346b35 348r26
+63V13*Get_Login_Threshold{natural} 20|351b13 354l8 354t27
+64U14*Check_Login_Threshold 20|356b14 361l8 361t29
+65U14*Reset_Threshold 20|363b14 366l8 366t23
+66U14*Set_System_Mode 66>31 20|368b14 371l8 371t23
+66a31 Mode{string} 20|368b31
+67V13*Get_System_Mode{string} 20|373b13 376l8 376t23
+68U14*Enable_Two_Factor 20|378b14 381l8 381t25
+69V13*Is_Two_Factor_Enabled{boolean} 20|383b13 386l8 386t29
+70U14*Verify_Two_Factor_Code 70>38 70<53 20|388b14 391l8 391t30
+70a38 Code{string} 20|388b38 390r16
+70b53 Valid{boolean} 20|388b53 390m7
+71U14*Generate_Two_Factor_Code 20|393b14 396l8 396t32
+72V13*Get_Two_Factor_Code{string} 20|398b13 401l8 401t27
+73U14*Expire_Two_Factor_Code 20|403b14 406l8 406t30
+74U14*Set_Security_Level 74>34 20|408b14 411l8 411t26
+74i34 Level{natural} 20|408b34 410r25
+75V13*Get_Security_Level{natural} 20|413b13 416l8 416t26
+78i4 Max_Attempts{natural} 20|49r33 226r14
+79i4 Default_Session_Duration{natural} 20|14r34
+80i4 Default_Lockout_Duration{natural} 20|15r34
+81i4 Default_Login_Threshold{natural} 20|22r33
+82i4 Default_Security_Level{natural} 20|24r32
+X 20 security.adb
+7a4 Correct_Password{string} 38r34
+8i4 Current_Attempts{natural} 49r13 59m7 59r27 64r14 79m7 207m7
+9e4 Current_Status{19|3E9} 69m7 74r14 80m7 135m7 140r14 208m7
+10e4 Current_Role{19|4E9} 81m7 119m7 124r14 267r18
+11b4 Session_Active{boolean} 82m7 92r14 97m7 104m7 110r10 209m7
+12r4 Session_Token{12|88R9} 155m7 160r24 165m7
+13i4 Last_Login_Time{2|42I9} 92r47 99m7 145m7 150r25 170r19 177m7
+14i4 Session_Duration{natural} 92r75 170r47 257m7 262r14
+15i4 Lockout_Duration{natural} 287m7 292r14
+16b4 Lockout_Active{boolean} 297m7 302r14 307m7
+17i4 Successful_Logins{natural} 231m7 231r28 236r14 251m7
+18i4 Failed_Logins{natural} 241m7 241r24 246r14 252m7 358r10 365m7
+19i4 Audit_Entries{natural} 87m7 87r24 155r69 272m7 272r24 277r14 282m7
+20i4 Event_Log_Count{natural} 182m7 182r26 187r14 192m7
+21i4 Session_Log_Count{natural} 333m7 333r28 338r14 343m7
+22i4 Login_Threshold{natural} 348m7 353r14 358r27
+23r4 Username{12|88R9} 197m7 202r24
+24i4 Security_Level{natural} 410m7 415r14
+25b4 Two_Factor_Enabled{boolean} 380m7 385r14
+26r4 Two_Factor_Code{12|88R9} 390r33 395m7 400r24 405m7
+27i4 Password_Min_Length{natural} 129r35 312m7 318r14
+28b4 Password_Requires_Special{boolean} 130r21 313m7 323r14
+31r7 User_Input{12|88R9} 37m7 38r20
+32a7 Password{string} 36m16 37r41
+33i7 Last{natural} 36m26 37r55
+X 21 system.ads
+67M9*Address
+X 30 s-memory.ads
+53V13*Alloc{21|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{21|67M9} 105i<c,__gnat_realloc>22
+X 37 s-stalib.adb
+89U14 Break_Start 90i<c,__gnat_break_start>22
+
